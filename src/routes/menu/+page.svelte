@@ -23,9 +23,8 @@
 
     <!-- Menu Items -->
     <nav class="space-y-10 text-center">
-        <a href="/" class="text-5xl text-black block">Home Page</a>
-        <a href="/history" class="text-5xl text-black block">History</a>
-        <a href="/calendar" class="text-5xl text-black block">Calendar</a>
-        <a href="/about" class="text-5xl text-black block">About</a>
+        <a href="/" class="text-5xl text-black block" on:click={closeMenu}>Home Page</a>
+        <a href="/list" class="text-5xl text-black block" on:click={closeMenu}>List</a>
+        <a href="/about" class="text-5xl text-black block" on:click={closeMenu}>About</a>
     </nav>
 </div>
