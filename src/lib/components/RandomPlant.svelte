@@ -1,6 +1,5 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import List from "$lib/components/List.svelte";
 
     interface Plant {
         common_name: string;
@@ -51,25 +50,3 @@
         }
     });
 </script>
-
-<div class="container mx-auto p-4">
-    {#if loading}
-        <p class="text-center">Loading...</p>
-    {:else if error}
-        <p class="text-center text-red-500">{error}</p>
-    {:else}
-        <h2 class="text-xl font-bold mb-2">Indoor Plants</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {#each indoorPlants as plant}
-                <List {plant} />
-            {/each}
-        </div>
-
-        <h2 class="text-xl font-bold mt-8 mb-2">Outdoor Plants</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {#each outdoorPlants as plant}
-                <List {plant} />
-            {/each}
-        </div>
-    {/if}
-</div> 

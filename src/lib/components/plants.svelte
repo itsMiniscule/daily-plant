@@ -17,7 +17,7 @@
 
     const fetchPlantData = async () => {
         try {
-            const response = await fetch("https://perenual.com/api/species-list?key=sk-L9WP675b80ec7662a7987&indoor=1");
+            const response = await fetch("https://perenual.com/api/species-list?key=sk-L9WP675b80ec7662a7987");
             const result = await response.json();
             if (result.data && result.data.length > 0) {
                 plantData = result.data[Math.floor(Math.random() * result.data.length)];
