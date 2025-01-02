@@ -5,7 +5,7 @@
     import PlantTimer from "$lib/components/PlantTimer.svelte";
 </script>
 
-<section class="flex flex-col items-center mb-6">
+<section class="flex flex-col items-center mb-4">
     <div class="text-6xl font-bold mb-4 text-center">Plant of the Day</div>
 </section>
 

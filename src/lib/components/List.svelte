@@ -15,7 +15,7 @@
       {plant.scientific_name?.[0] || "Unknown Scientific Name"}
     </p>
     <p class="text-sm mt-2 text-green-600 hover:text-green-800">
-      <strong>Fun Fact:</strong> {plant.description ? plant.description.slice(0, 80) + "..." : "No fun fact available."}
+      <strong>Fun Fact:</strong> {plant.description || "No fun fact available."}
     </p>
   </div>
 </div>

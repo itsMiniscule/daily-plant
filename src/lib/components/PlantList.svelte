@@ -7,6 +7,7 @@
         scientific_name: string[];
         indoor: boolean | null;
         family: string | null;
+        description: string | null;
         default_image: {
             thumbnail: string | null;
         };
