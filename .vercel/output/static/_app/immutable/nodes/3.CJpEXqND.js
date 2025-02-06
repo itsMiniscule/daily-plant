@@ -1,4 +1,4 @@
-import{a as e,t as o}from"../chunks/disclose-version.CG5hTWpr.js";import"../chunks/legacy.DMQsNOF5.js";var n=o(`<div class="container mx-auto mb-32 p-6 bg-green-50 rounded-lg shadow-lg"><h1 class="text-4xl font-bold text-green-700 mb-6">About This Project</h1> <p class="text-lg text-gray-800 mb-4">This app is designed to help you discover a new plant every day. Each
+import{a as e,t as o}from"../chunks/D_Nr5-UB.js";import"../chunks/DPrK0day.js";var n=o(`<div class="container mx-auto mb-32 p-6 bg-green-50 rounded-lg shadow-lg"><h1 class="text-4xl font-bold text-green-700 mb-6">About This Project</h1> <p class="text-lg text-gray-800 mb-4">This app is designed to help you discover a new plant every day. Each
         day, a random plant is displayed with some interesting and factual
         information about it, helping you learn more about the plant world.</p> <p class="text-lg text-gray-800 mb-4">In addition to the daily plant feature, the app also includes a Plant
         List where you can browse through a collection of various plants. You
