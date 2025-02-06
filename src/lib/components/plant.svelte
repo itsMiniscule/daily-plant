@@ -6,10 +6,8 @@
 
     export let plantData;
 
+    // State to toggle the visibility of the info box
     let showInfo = false;
-
-    // Flag for student access approval - change to true when confirmed
-    let isStudentAccessApproved = false;
 
     function toggleInfo() {
         showInfo = !showInfo;
@@ -44,11 +42,12 @@
         <img src={Vine} alt="Vine" class="absolute bottom-0 right-0 w-32" />
     </div>
 
-    <!-- Info Box -->
+    <!-- Info Box (conditionally rendered) -->
     {#if showInfo}
         <div
-            class="w-72 h-50 bg-white shadow-md border border-forest-green p-4 relative"
+            class="w-80 h-60 bg-white shadow-md border border-forest-green p-4 relative"
         >
+            <!-- Bee Icon (Top Right) -->
             <span class="absolute w-24 h-21 -top-4 right-0 flex items-center">
                 <img src={Bumblebee} alt="Bumblebee" />
             </span>
@@ -65,87 +64,77 @@
                         ? plantData.scientific_name.join(", ")
                         : "Not available"}
                 </div>
+                {#if plantData.family}
+                    <div>
+                        <span class="font-semibold">Family:</span>
+                        {plantData.family}
+                    </div>
+                {/if}
+                {#if plantData.watering}
+                    <div>
+                        <span class="font-semibold">Watering:</span>
+                        {plantData.watering}
+                    </div>
+                {/if}
+                {#if plantData.cycle}
+                    <div>
+                        <span class="font-semibold">Cycle:</span>
+                        {plantData.cycle}
+                    </div>
+                {/if}
+                {#if plantData.attracts?.length}
+                    <div>
+                        <span class="font-semibold">Attracts:</span>
+                        {plantData.attracts.join(", ")}
+                    </div>
+                {/if}
+                {#if plantData.growth_rate}
+                    <div>
+                        <span class="font-semibold">Growth Rate:</span>
+                        {plantData.growth_rate}
+                    </div>
+                {/if}
+                {#if plantData.maintenance}
+                    <div>
+                        <span class="font-semibold">Maintenance:</span>
+                        {plantData.maintenance}
+                    </div>
+                {/if}
+                {#if plantData.hardiness?.min && plantData.hardiness?.max}
+                    <div>
+                        <span class="font-semibold">Hardiness Zone:</span>
+                        {plantData.hardiness.min} - {plantData.hardiness.max}
+                    </div>
+                {/if}
                 <div>
-                    <span class="font-semibold">Other Name:</span>
-                    {plantData.other_name || "Not available"}
+                    <span class="font-semibold">Edible:</span>
+                    {plantData.edible_fruit ? "Yes" : "No"}
                 </div>
                 <div>
-                    <span class="font-semibold">Sunlight:</span>
-                    {plantData.sunlight || "Not specified"}
+                    <span class="font-semibold">Poisonous to Humans:</span>
+                    {plantData.poisonous_to_humans ? "Yes" : "No"}
                 </div>
                 <div>
-                    <span class="font-semibold">Watering:</span>
-                    {plantData.watering || "Not specified"}
+                    <span class="font-semibold">Poisonous to Pets:</span>
+                    {plantData.poisonous_to_pets ? "Yes" : "No"}
                 </div>
-
-                <!-- Additional fields (will only be shown when my student access request gets approved) -->
-                {#if isStudentAccessApproved}
-                    {#if plantData.family}
-                        <div>
-                            <span class="font-semibold">Family:</span>
-                            {plantData.family}
-                        </div>
-                    {/if}
-                    {#if plantData.cycle}
-                        <div>
-                            <span class="font-semibold">Cycle:</span>
-                            {plantData.cycle}
-                        </div>
-                    {/if}
-                    {#if plantData.attracts?.length}
-                        <div>
-                            <span class="font-semibold">Attracts:</span>
-                            {plantData.attracts.join(", ")}
-                        </div>
-                    {/if}
-                    {#if plantData.growth_rate}
-                        <div>
-                            <span class="font-semibold">Growth Rate:</span>
-                            {plantData.growth_rate}
-                        </div>
-                    {/if}
-                    {#if plantData.maintenance}
-                        <div>
-                            <span class="font-semibold">Maintenance:</span>
-                            {plantData.maintenance}
-                        </div>
-                    {/if}
-                    {#if plantData.hardiness?.min && plantData.hardiness?.max}
-                        <div>
-                            <span class="font-semibold">Hardiness Zone:</span>
-                            {plantData.hardiness.min} - {plantData.hardiness.max}
-                        </div>
-                    {/if}
+                {#if plantData.flowers}
                     <div>
-                        <span class="font-semibold">Edible:</span>
-                        {plantData.edible_fruit ? "Yes" : "No"}
+                        <span class="font-semibold">Flowering Season:</span>
+                        {plantData.flowering_season || "Not specified"}
                     </div>
+                {/if}
+                {#if plantData.propagation?.length}
                     <div>
-                        <span class="font-semibold">Poisonous to Humans:</span>
-                        {plantData.poisonous_to_humans ? "Yes" : "No"}
+                        <span class="font-semibold">Propagation:</span>
+                        {plantData.propagation.join(", ")}
                     </div>
+                {/if}
+                {#if plantData.description}
                     <div>
-                        <span class="font-semibold">Poisonous to Pets:</span>
-                        {plantData.poisonous_to_pets ? "Yes" : "No"}
+                        <span class="font-semibold">Description:</span>
+                        {plantData.description}
                     </div>
-                    {#if plantData.flowers}
-                        <div>
-                            <span class="font-semibold">Flowering Season:</span>
-                            {plantData.flowering_season || "Not specified"}
-                        </div>
-                    {/if}
-                    {#if plantData.propagation?.length}
-                        <div>
-                            <span class="font-semibold">Propagation:</span>
-                            {plantData.propagation.join(", ")}
-                        </div>
-                    {/if}
-                    {#if plantData.description}
-                        <div>
-                            <span class="font-semibold">Description:</span>
-                            {plantData.description}
-                        </div>
-                    {/if}
                 {/if}
             </div>
         </div>

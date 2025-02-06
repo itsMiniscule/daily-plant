@@ -7,7 +7,7 @@
   <img
     src={plant.default_image?.thumbnail || Default} 
     alt={plant.common_name || "Unknown Plant"}
-    class="w-20 h-20 object-cover rounded mr-4"
+    class="w-16 h-16 object-cover rounded mr-4"
   />
   <div>
     <h2 class="font-bold text-lg">{plant.common_name || "Unknown Name"}</h2>
@@ -15,10 +15,7 @@
       {plant.scientific_name?.[0] || "Unknown Scientific Name"}
     </p>
     <p class="text-sm mt-2 text-green-600 hover:text-green-800">
-      <strong>Sunlight:</strong> {plant.sunlight || "No information on sunlight"}
-    </p>
-    <p class="text-sm mt-2 text-green-600 hover:text-green-800">
-      <strong>Watering:</strong> {plant.watering || "No information on watering"}
+      <strong>Fun Fact:</strong> {plant.description || "No fun fact available."}
     </p>
   </div>
 </div>
