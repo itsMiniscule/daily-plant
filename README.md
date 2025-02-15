@@ -26,20 +26,15 @@ see: https://perenual.com/ from more information and documentation on the API.
 ### Steps:
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/plant-parent.git
-   cd plant-parent
+   git clone https://github.com/itsMiniscule/daily-plant.git
 2. Install Dependecies:
     ```bash
     npm install
+    npm run build
 3. Run the development server:
     ```bash
     npm run dev
-4. Open your browser and navigate to http://localhost:5000 to view the application.
-
-*PS: you might have to run:*
-    ```
-    npm install @sveltejs/adapter-vercel
-    ```
+4. Open your browser and navigate to http://localhost:5173 to view the application.
 
 ## Usage
 Once the app is running, you can:
@@ -73,11 +68,8 @@ https://perenual.com/api/species-list?key={User Credential Key}
 ````
 ## Deployment
 This project is currently deployed using **Vercel**. <br> 
-Either view the deployment in Github: https://github.com/itsMiniscule/daily-plant/deployments
-
-or view the deployed application via this link:
-https://daily-plant-rzzq-qhbsh9zm7-anne-van-den-bergs-projects.vercel.app/
+View the deployed application via this link:
+https://daily-plant-rzzq.vercel.app/
 
 ##  License
 This project is licensed under the **MIT License**.
-
